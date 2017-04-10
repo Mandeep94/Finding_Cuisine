@@ -69,8 +69,10 @@ def diffusion(cuisine_ingredient_dict, cuisines, labels, reduced_data) :
 	    j = 0
 	    
 	    for cuisineB in cuisines:
-	        if cuisineB != cuisineA: # if it is A itself - we obviously wouldn't want this (will be exactly 1)
-	            if labels[j] == labels[i]: #determines if then they are both in the same cluster
+	    	# if it is A itself - we obviously wouldn't want this (will be exactly 1)
+	        if cuisineB != cuisineA: 
+	        	#determines if then they are both in the same cluster
+	            if labels[j] == labels[i]: 
 	                setB_forA.extend(set(cuisine_ingredient_dict[cuisineB]))
 	                numInClusterBesidesA += 1
 	        j += 1
@@ -80,11 +82,7 @@ def diffusion(cuisine_ingredient_dict, cuisines, labels, reduced_data) :
 	       
 	    i += 1
 
-#	return effect_on_cluster
-
-
-#def plot(effect_on_cluster, reduced_data, cuisines, labels):
-
+	#plot the data
 	rdata = reduced_data
 	i=0
 	figureRatios = (15,20)
